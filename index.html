@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="keywords" content="HTML, CSS, JavaScript, Ruby, Rails" />
+        <meta name="description" content="Code Examples Quick Reference" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Code Examples Quick Reference</title>
+        <link rel="stylesheet" href="/static/styles.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="nav-bar">
+                <ul class="nav-items">
+                    <li id="homeButton"><a href="#home">HOME</a></li>
+                    <!-- <li><a href="#html">HTML</a></li>
+                    <li><a href="#css">CSS</a></li>
+                    <li><a href="#js">JavaScript</a></li>
+                    <li><a href="#ruby">Ruby</a></li>
+                    <li><a href="#rails">Rails</a></li> -->
+                </ul>
+            </nav>
+        </header>
+        <h1>Code Examples Quick Reference Guide</h1>
+        <div class="button-container">
+            <button type="button" id="htmlButton" class="examplesButton">HTML Examples</button>
+            <button type="button" id="cssButton" class="examplesButton">CSS Examples</button>
+            <button type="button" id="jsButton" class="examplesButton">JavaScript Examples</button>
+            <button type="button" id="rubyButton" class="examplesButton">Ruby Examples</button>
+            <button type="button" id="railsButton" class="examplesButton">Rails Examples</button>
+        </div>
+        <section id="html" class="hidden">
+            <h2>HTML</h2>
+            <h3>Basic Structure</h3>
+            <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                    &lt;/body&gt;
+                    &lt;footer&gt;
+                    &lt;/footer&gt;
+                &lt;/html&gt;
+            </code></pre>
+            <h3>Standard Head Setup</h3>
+            <pre><code>
+                &lt;head&gt;
+                    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+                    &lt;meta name=&quot;keywords&quot; content=&quot;HTML, CSS, JavaScript, Ruby, Rails&quot; /&gt;
+                    &lt;meta name=&quot;description&quot; content=&quot;Code Examples Quick Reference&quot; /&gt;
+                    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+                    &lt;title&gt;Code Examples Quick Reference&lt;/title&gt;
+                    &lt;link rel=&quot;stylesheet&quot; href=&quot;/static/styles.css&quot; /&gt;
+                &lt;/head&gt;
+            </code></pre>
+            </section>
+            <section id="css" class="hidden">
+                <h2>CSS</h2>
+            </section>
+            <section id="js" class="hidden">
+            <h2>JavaScript</h2>
+            <h3>Array Iterators</h3>
+            <p>.filter - iterates over each element in an array and returns a new array of only the elements that match the specified condition</p>
+            <pre><code>
+            // Return a new array of the names that are 4 letters or less using the filter prototype method.
+            const names = ['nick', 'ben', 'trisha', 'john', 'dustin'];
+            // PSEUDOCODE
+            // Iterate through array
+            // Determine if element is 4 letters or less
+            // If yes, Add to new array
+            function filterNames() {
+                const shortNames = names.filter( (name) => name.length < 5 )
+                console.log('result:', shortNames)
+            }
+            filterNames() 
+        
+            // Alternate solution
+            function FilterNames() {
+                const shortNames = names.filter( (name) => {
+                    return name.length < 5
+                })
+                return shortNames
+            }
+            console.log(filterNames) 
+        
+            // shortcut/shorthand
+            const shortNames = names.filter( (name) => name.length < 5)
+            console.log(shortNames)
+        
+        </code></pre>
+        <p>.map() - iterates over each element in an array and returns a new array of the same length with the modified elements</p>
+        <pre><code>
+            // Example #1
+            // Using map, iterate over the array of prices, increase the price by $1, and return a new array of increased prices. Store them in a variable called increasedPrices.
+            const prices = [4.99, 5.50, 7.00, 10.25]; 
+            function increasePrices() {
+                const increasedPrices = prices.map( (price) => price + 1 )
+                return increasedPrices
+            }
+            console.log('increased prices:', increasePrices()) 
+        
+            // Example #2
+            // Using an array of temperature data in Fahrenheit, convert the date to degrees Celsius and store them in a variable called degreesC. (T(°C) = (T(°F) - 32) / 1.8)
+            const degreesF = [67, 32, 55, 102]
+            function convertTemp() {
+                const degreesC = degreesF.map( (temperature) => (temperature - 32) / 1.8 )
+                return degreesC
+            }
+            console.log("Temps Celsius:", convertTemp()) 
+            </code></pre>
+            <p>.reduce() - iterates over each element in an array and returns a single value (the accumulator) of your specifications</p>
+            <pre><code>
+            //Example #1
+            // Using reduce, sum up all of the numbers.
+            const numbers = [1, 2, 3, 4, 5];
+            function sumNumbers() {
+            const result = numbers.reduce((acc, num) => {  // If no initial value is set, acc = 1st array element index 0, and num = 2nd array element index 1;
+                acc += num;
+                return acc;
+            }, 0) // optional acc set if you want to set it to something other than the first array element
+            return result;
+            }
+            console.log("Sum of numbers:", sumNumbers())
+
+            // Example #2  *NOTE*  You will see something similar to this in your mid-mod and/or final
+            // Using reduce, create a new object the stores the lengths of each word.
+            const adjectives = ['fantastic', 'amazing', 'childish'];
+            function countChars() {
+            const countedChars = adjectives.reduce( (acc, word) => {
+                acc[word] = word.length;
+                return acc;
+            }, {})  // For initial acc - What data type should the final result you're returning be?
+            return countedChars;
+            }
+            console.log("Words with counted characters:", countChars())
+            </code></pre>
+            <p>.sort() -</p>
+            <code><pre>
+            // .sort()  *NOTE*  Does a permanent mutation of the original array data; Data is the same, but sorted.
+            // Example 1
+
+            // Example 2
+
+            // Example #3  *NOTE*  You will see something similar to this in your mid-mod and/or final
+            // Write a function sortCitiesByPopulation(cities) that takes an array of cities and uses the sort method to sort the cities based on their population in descending order. Return the array of sorted cities.
+            const cities = [
+            { name: 'New York', population: 8398748, country: 'United States' },
+            { name: 'Tokyo', population: 37393000, country: 'Japan' },
+            { name: 'London', population: 8908081, country: 'United Kingdom' },
+            { name: 'Mumbai', population: 12478447, country: 'India' }
+            ];
+            function sortCitiesByPopulation() {
+                const sortedCities = cities.sort((city1, city2) => {
+                    return city2.population - city1.population;
+                    })
+                return sortedCities
+            }
+            console.log(sortCitiesByPopulation("Sorted By Population: ", cities));
+            </pre></code>
+        </section>
+        <section id="ruby" class="hidden">
+            <h2 >Ruby</h2>
+        </section>
+        <section id="rails" class="hidden">
+            <h2 >Rails</h2>
+        </section>
+        <footer>
+
+        </footer>
+        <script type="text/JavaScript" src="./src/main.js"></script>
+    </body>
+</html>
