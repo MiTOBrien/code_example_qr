@@ -135,12 +135,31 @@
             }
             console.log("Words with counted characters:", countChars())
             </code></pre>
-            <p>.sort() -</p>
+            <p>.sort() - iterates over each element in an array and sorts the elements (in place) based on your specified sorting.
+            </p>
+            <br />Does a permanent mutation of the original array data; Data is the same, but sorted.
             <code><pre>
-            // .sort()  *NOTE*  Does a permanent mutation of the original array data; Data is the same, but sorted.
             // Example 1
-
+            // Sort the numbers in ascending order.
+            const sortNumbers = [15, 6, 14, 2, 22, 9, 45];
+            function returnSortedNumbers() {
+              const sortedNumbers = sortNumbers.sort((a, b) => {
+                return a - b;
+              })
+              return sortedNumbers
+            }
+            console.log("Sorted ascending:", returnSortedNumbers())
+            
             // Example 2
+            // Sort the numbers in descending order.
+            const sortedDescendingNumbers = [15, 6, 14, 2, 22, 9, 45];
+            function returnSortedNumbers() {
+              const sortedNumbers = sortNumbers.sort((a, b) => {
+                return b - a;
+              })
+              return sortedNumbers
+            }
+            console.log("Sorted descending:", returnSortedNumbers())
 
             // Example #3  *NOTE*  You will see something similar to this in your mid-mod and/or final
             // Write a function sortCitiesByPopulation(cities) that takes an array of cities and uses the sort method to sort the cities based on their population in descending order. Return the array of sorted cities.
