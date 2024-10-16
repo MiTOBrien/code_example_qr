@@ -36,8 +36,7 @@ homeButton.addEventListener("click", function() {
 })
 
 // Toggle the pages
-// on click show the page that was clicked
-// Make sure all other sections are hidden
+
 function showContent(pageToShow, allButtons) {
     htmlPage.classList.add("hidden")
     cssPage.classList.add("hidden")
