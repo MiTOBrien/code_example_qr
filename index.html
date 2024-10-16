@@ -164,6 +164,19 @@
         </section>
         <section id="rails" class="hidden">
             <h2 >Rails</h2>
+            <p>Creating a new rails project: rails new task_manager -T -d="postgresql" --api</p>
+            <br />Breakdown:
+            <br />rails new - create a new rails application
+            <br />task_manager - The folder the project will be created in
+            <br />-T - We will be using the rails built-in testing suite
+            <br />-d="postgressql" - We will be using a Postgresql database
+            <br />--api - We will be building an API instead of an application that has a frontend
+            <p>Important directories:</p>
+            <br />app - This is where we configure Models and Controllers
+            <br />config - Inside this directory, in the routes.rb file is where we will tell our Rails app which HTTP requests to respond to.
+            <br />db - Where our database structure will be set up.
+            <br />Gemfile - Tells Rails about any gems we might need to run our app.
+            <br />Any time the gemfile is updated, you need to tell your application to install or update the additional gems. In the terminal run: bundle install
         </section>
         <footer>
 
