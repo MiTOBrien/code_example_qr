@@ -21,15 +21,16 @@
                 </ul>
             </nav>
         </header>
-        <h1>Code Examples Quick Reference Guide</h1>
+        <h1>Code Examples & Quick Reference Guide</h1>
         <div class="button-container">
             <button type="button" id="htmlButton" class="examplesButton">HTML Examples</button>
             <button type="button" id="cssButton" class="examplesButton">CSS Examples</button>
             <button type="button" id="jsButton" class="examplesButton">JavaScript Examples</button>
             <button type="button" id="rubyButton" class="examplesButton">Ruby Examples</button>
             <button type="button" id="railsButton" class="examplesButton">Rails Examples</button>
+            <button type="button" id="sqlButton" class="examplesButton">SQL Examples</button>
         </div>
-        <section id="html" class="hidden">
+        <section id="html" class="codePage hidden">
             <h2>HTML</h2>
             <h3>Basic Structure</h3>
             <pre><code>
@@ -55,10 +56,10 @@
                 &lt;/head&gt;
             </code></pre>
             </section>
-            <section id="css" class="hidden">
+            <section id="css" class="codePage hidden">
                 <h2>CSS</h2>
             </section>
-            <section id="js" class="hidden">
+            <section id="js" class="codePage hidden">
             <h2>JavaScript</h2>
             <h3>Array Iterators</h3>
             <p>.filter - iterates over each element in an array and returns a new array of only the elements that match the specified condition</p>
@@ -134,6 +135,42 @@
             return countedChars;
             }
             console.log("Words with counted characters:", countChars())
+
+            // Example #3
+            // Given a list of countries, write a function that returns a new object where the keys are country names and their values are an object containing the rest of the country's data.
+            var countries = [
+            {
+                "countryCode": "AF",
+                "countryName": "Afghanistan",
+                "population": "29121286",
+                "capital": "Kabul",
+                "continentName": "Asia"
+            },
+            {
+                "countryCode": "AL",
+                "countryName": "Albania",
+                "population": "2986952",
+                "capital": "Tirana",
+                "continentName": "Europe"
+            },
+            {
+                "countryCode": "DZ",
+                "countryName": "Algeria",
+                "population": "34586184",
+                "capital": "Algiers",
+                "continentName": "Africa"
+            },
+            ]
+            function organizeByCountry(countries) {
+                const organizedCountries = countries.reduce((acc, country) => {
+                    // Explictly assigns countryName and ...rest is the rest of the object
+                    const { countryName, ...rest} = country; 
+                    acc[countryName] = rest;
+                    return acc;
+                }, {})
+                return organizedCountries;
+            }
+            console.log(organizeByCountry(countries))
             </code></pre>
             <p>.sort() - iterates over each element in an array and sorts the elements (in place) based on your specified sorting.
             </p>
@@ -178,10 +215,10 @@
             console.log(sortCitiesByPopulation("Sorted By Population: ", cities));
             </pre></code>
         </section>
-        <section id="ruby" class="hidden">
+        <section id="ruby" class="codePage hidden">
             <h2 >Ruby</h2>
         </section>
-        <section id="rails" class="hidden">
+        <section id="rails" class="codePage hidden">
             <h2 >Rails</h2>
             <p>Creating a new rails project: rails new task_manager -T -d="postgresql" --api</p>
             <br />Breakdown:
@@ -197,8 +234,11 @@
             <br />Gemfile - Tells Rails about any gems we might need to run our app.
             <br />Any time the gemfile is updated, you need to tell your application to install or update the additional gems. In the terminal run: bundle install
         </section>
+        <section id="sql" class="codePage hidden">
+            <h2>SQL</h2>
+        </section>
         <footer>
-
+            <a href="https://github.com/Rockrat2008" target="_blank"><img src="./static/images/github_social_media_logo.webp" alt="My Github" height="75px" width="75px"/></a>
         </footer>
         <script type="text/JavaScript" src="./src/main.js"></script>
     </body>
