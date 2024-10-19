@@ -23,10 +23,12 @@ h1, h2{
 .nav-items {
     display: flex;
     list-style: none;
+    margin-left: 0;
 }
 
-.nav-items li {
-    margin-right: 20px;
+.nav-items:hover {
+    background-color: white;
+    color: gray;
 }
 
 .button-container {
@@ -39,4 +41,10 @@ h1, h2{
     justify-content: center;
     font-size: 5em;
     width: 800px;
+    /* border: 1px, solid black; */
+}
+
+.examplesButton:hover {
+    background-color: white;
+    color: gray;
 }
