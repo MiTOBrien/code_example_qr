@@ -4,7 +4,9 @@ const htmlPage = document.getElementById("html"),
       jsPage = document.getElementById("js"),
       rubyPage = document.getElementById("ruby"),
       railsPage = document.getElementById("rails"),
+      sqlPage = document.getElementById("sql"),
       allButtons = document.getElementsByClassName("examplesButton")
+      allPages = document.getElementsByClassName("codePage")
 
 
 // BUTTON VARIABLES
@@ -13,6 +15,7 @@ const htmlButton = document.getElementById("htmlButton"),
       jsButton = document.getElementById("jsButton"),
       rubyButton = document.getElementById("rubyButton"),
       railsButton = document.getElementById("railsButton"),
+      sqlButton = document.getElementById("sqlButton"),
       homeButton = document.getElementById("homeButton")
 
 // ?EVENT LISTENERS
@@ -31,6 +34,9 @@ rubyButton.addEventListener("click", function() {
 railsButton.addEventListener("click", function() {
     showContent(railsPage, allButtons);
 })
+sqlButton.addEventListener("click", function() {
+    showContent(sqlPage, allButtons);
+})
 homeButton.addEventListener("click", function() {
     showMain(allButtons);
 })
@@ -38,12 +44,10 @@ homeButton.addEventListener("click", function() {
 // Toggle the pages
 
 function showContent(pageToShow, allButtons) {
-    htmlPage.classList.add("hidden")
-    cssPage.classList.add("hidden")
-    jsPage.classList.add("hidden")
-    rubyPage.classList.add("hidden")
-    railsPage.classList.add("hidden")
-    
+    for(let i=0; i < allPages.length; i++) {
+        allPages[i].classList.add("hidden")
+    }
+
     pageToShow.classList.remove("hidden");
     for(let i=0; i < allButtons.length; i++) {
             allButtons[i].classList.add("hidden")
@@ -51,11 +55,9 @@ function showContent(pageToShow, allButtons) {
 }
 
 function showMain(allButtons) {
-    htmlPage.classList.add("hidden")
-    cssPage.classList.add("hidden")
-    jsPage.classList.add("hidden")
-    rubyPage.classList.add("hidden")
-    railsPage.classList.add("hidden")
+    for(let i=0; i < allPages.length; i++) {
+        allPages[i].classList.add("hidden")
+    }
 
     for(let i=0; i < allButtons.length; i++) {
         allButtons[i].classList.remove("hidden")
