@@ -62,8 +62,45 @@
             <section id="js" class="codePage hidden">
             <h2>JavaScript</h2>
             <h3>Array Iterators</h3>
+            <p>.forEach - iterates over each element in an array letting you do something to (or with) each element. Cannot return a value.</p>
+            <pre><code>
+            // EXAMPE #1
+            // Given a list of countries, write a function that returns an array of all the country codes using `.forEach`.
+            var countries = [
+            {
+                "countryCode": "AF",
+                "countryName": "Afghanistan",
+                "population": "29121286",
+                "capital": "Kabul",
+                "continentName": "Asia"
+            },
+            {
+                "countryCode": "AL",
+                "countryName": "Albania",
+                "population": "2986952",
+                "capital": "Tirana",
+                "continentName": "Europe"
+            },
+            {
+                "countryCode": "DZ",
+                "countryName": "Algeria",
+                "population": "34586184",
+                "capital": "Algiers",
+                "continentName": "Africa"
+            },
+            ]
+            function getCodes(countries) {
+                const countryCodes =[];
+                countries.forEach( (country) => {
+                    countryCodes.push(country.countryCode);
+            })
+                return countryCodes;
+            }
+            console.log(getCodes(countries)) // => ["AF","AL","DZ"]
+            </code></pre>
             <p>.filter - iterates over each element in an array and returns a new array of only the elements that match the specified condition</p>
             <pre><code>
+            // EXAMPLE #1
             // Return a new array of the names that are 4 letters or less using the filter prototype method.
             const names = ['nick', 'ben', 'trisha', 'john', 'dustin'];
             // PSEUDOCODE
@@ -236,6 +273,18 @@
         </section>
         <section id="sql" class="codePage hidden">
             <h2>SQL</h2>
+            <p><strong>NOTE:</strong>&nbsp;&nbsp;Values in tables must be in single quotes ' ' when searching for them.</p>
+            <h3>SELECT</h3>
+            <p>SELECT * FROM <emphasis>tableName</emphasis></p>
+            <p>SELECT <emphasis>columnName</emphasis> FROM <emphasis>tableName</emphasis></p>
+            <h3>SELECT WHERE</h3>
+            <p>SELECT <emphasis>columnName, columnName</emphasis> FROM <emmhasis>tableName</emmhasis> WHERE <emphasis>columnName < 1000</emphasis> AND <emphasis>columnName > 100</emphasis></p>
+            <h3>SELECT WHERE LIKE</h3>
+            <p>SELECT * FROM <emphasis>tableName</emphasis> WHERE <emphasis>columnName</emphasis> LIKE '%Tennis%'</p>
+            <h3>SELECT WHERE IN</h3>
+            <p>SELECT * FROM <emphasis>tableName</emphasis> WHERE <emphasis>columnName</emphasis> IN(1, 5)</p>
+            <h3>INSERT</h3>
+            <p>INSERT INTO <emphasis>tableName(columnName, columnName)</emphasis> VALUES('Value1', 'Value2')</p>
         </section>
         <footer>
             <a href="https://github.com/Rockrat2008" target="_blank"><img src="./static/images/github_social_media_logo.webp" alt="My Github" height="75px" width="75px"/></a>
