@@ -257,6 +257,20 @@
             }
             console.log(sortCitiesByPopulation("Sorted By Population: ", cities));
             </pre></code>
+            <h3>DOM Variables and Selectors</h3>
+            <p>document.querySelector("h2");</p>
+            <ul>
+                <li>To select an element surround the element in quotes "h2"</li>
+                <li>To select by class place a . in front of the class name ".dogs"</li>
+                <li>To select an id place a # in front of the name "#.myDog"</li>
+            </ul>
+            <p>var myButton = document.querySelector("button")</p>
+            <p>const myDog = document.getElementById("myDog") - the # is not required because you're specifying that you are looking for an Id.</p>
+            <p>let allMyDogs = document.getElementsByClassName("dogs") - the . is not required because you're specifying that you are looking for a class.</p>
+            <h3>Event Listeners</h3>
+            <p><strong>NOTE:</strong> You have to set up a variable with some type of selector above before assigning an event listener.</p>
+            <p>clickButton = myButton.addEventListener("click", <emphasis>funtionName</emphasis></p>
+
         </section>
         <section id="ruby" class="codePage hidden">
             <h2 >Ruby</h2>
@@ -297,7 +311,12 @@
             <br />db - Where our database structure will be set up.
             <br />Gemfile - Tells Rails about any gems we might need to run our app.
             <br />Any time the gemfile is updated, you need to tell your application to install or update the additional gems. In the terminal run: bundle install
-            <p>Overview of the MVC flow</p>
+            <p>MVC Explained</p>
+            <ul>User makes a request:
+                <li>Model (handles connections) - Interacts with the server/database as required.</li>
+                <li>View (handles display) - Returns the information to the user and formats it to be displayed.</li>
+                <li>Controller (handles logic/routing) - Gets information from the model (server/databases) and tells the view what to display back to the user.</li>
+            </ul><p>Overview of the MVC flow</p>
             <img src="/static/images/mvc_rails.png" alt="How MVC flow works" />
         </section>
         <section id="sql" class="codePage hidden">
@@ -316,7 +335,10 @@
             <p>INSERT INTO <emphasis>tableName(columnName, columnName)</emphasis> VALUES('Value1', 'Value2')</p>
         </section>
         <footer>
-            <a href="https://github.com/Rockrat2008" target="_blank"><img src="./static/images/github_social_media_logo.webp" alt="My Github" height="75px" width="75px"/></a>
+            <div>
+                <a href="https://github.com/Rockrat2008" target="_blank"><img src="./static/images/github_social_media_logo.webp" alt="My Github" height="70px" width="70px"/></a>
+                <a href="https://linkedin.com/in/michaelobrien67/" target="_blank"><img src="./static/images/linkedin_circle_gray-128.webp" alt="My LinkedIn" height="75px" width="75px" /></a>
+            </div>
         </footer>
         <script type="text/JavaScript" src="./src/main.js"></script>
     </body>
