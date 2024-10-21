@@ -11,6 +11,11 @@ h1, h2{
 p, br, h3 {
     margin-left: 20px;
 }
+
+footer {
+    display: flex;
+    justify-content: center;
+}
 /* ID STYLING */
 
 /* CLASS STYLING */
